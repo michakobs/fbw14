@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS-Intro</title>
+    <style>
+        /* internal CSS */
+        .internal-css {
+            background-color:rgb(104, 212, 176); 
+            color:rgb(105, 105, 105); 
+            font-size: 34px;
+            margin-top: 30px; 
+        }
+    </style>
+    <!-- link zur externen CSS-datei -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Die 3 Wege um CSS einzubinden</h1>
+    <ol>
+        <li>Inline CSS</li>
+        <li>Internal CSS</li>
+        <li>External CSS</li>
+    </ol>
+
+    <!-- inline CSS -->
+    <div style="background-color:aquamarine; color:rgb(105, 105, 105); font-size: 34px">
+        Ich bin Inline CSS
+    </div>
+
+    <div class="internal-css">
+        Ich bin Internal CSS
+    </div>
+
+    <div class="external-css">
+        Ich bin External CSS
+    </div>
+
+    <!-- inline + external CSS -->
+    <div style="background-color:aquamarine; color:rgb(105, 105, 105); font-size: 34px" class="external-css" >
+            Ich bin Inline CSS und External CSS
+        </div>    
+
+    <!-- inline + external CSS -->
+    <div class="external-css internal-css" >
+        Ich bin Internal CSS und External CSS
+    </div>         
+</body>
+</html>

@@ -10,3 +10,21 @@ für neue Mitglieder und baue darauf basierend das Formular in HTML.
 
 Mache dafür ein Backup der index.html aus Deinem forms-Ordner und nenne es index2.html.
 
+Aufgabe 3:
+
+a) Mache eine Shopping-List von einem imaginären Einkauf im Supermarkt. Du kaufst
+5 Sachen ein und notierst Dir für jeden Artikel Name und Preis. Erstelle eine Liste
+in HTML. Welche Listenart, entscheidest Du.
+
+b) Erstelle auf Deinem Desktop ein Verzeichnis meine_musik. Gehe hinein. Erstelle 3 Unter-
+verzeichnisse Reggae, Electro und Klassik. Gehe in das Reggae-Verzeichnis hinein und erstelle
+das Verzeichnis Bob_Marley. Im Klassik-Verzeichnis, erstelle 2 Unterverzeichnisse Beethoven und Mozart.
+
+Erstelle eine verschachtelte Liste mit dem UL-Tag, die Deine Verzeichnisstruktur von meine_musik darstellt.
+
+Aufgabe 4:
+
+Schreibe einen kleinen Artikel über Dein Lieblings-Hobby mit 10 Sätzen. Formatiere den Text
+um Deine Leidenschaft und Freude zu betonen mit CSS-Formatierungselementen.
+
+
