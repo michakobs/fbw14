@@ -1,0 +1,25 @@
+Aufgabe:
+
+Erstelle eine Website entweder 
+- über Dich
+- Dein Heimatland
+- Deine Hobbies
+- oder ein anderes Thema was Dich interessiert!
+
+a) Folgende Elemente sollten mindestens benutzt werden:
+
+html, head, body, link, div, span, img, br, p, q, blockquote, a, h1, h2, title
+
+b) folgende CSS-Selektoren sollten benutzt werden (nicht mehr):
+
+ID #, Class ., Tag <element>
+
+c) folgende CSS-Attribute sollten mindestens benutzt werden:
+
+background-color
+color
+margin (oder alternativ auch margin-top, margin-left, margin-right, margin-bottom)
+padding (oder alternativ auch padding-top, padding-left, padding-right, padding-bottom)
+border (oder alternativ auch border-top, border-left, border-right, border-bottom)
+
+Jeder präsentiert 13:30 seine Ergebnisse!
