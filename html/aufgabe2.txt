@@ -1,0 +1,12 @@
+Aufgabe 1:
+
+Erstelle eine Tabelle über 3 Lieblingsgetränke/-autos/-hobbies/-urlaubsziele/-menschen und finde dafür 3 Attribute. Stelle dies als Tabelle dar.
+
+Aufgabe 2:
+
+Du möchtest den Registrierungprozess für Deinen Sportverein bauen. Deine Website
+braucht ein Registrierungsformular. Definiere mindestens 8 sinnvolle Informationen
+für neue Mitglieder und baue darauf basierend das Formular in HTML.
+
+Mache dafür ein Backup der index.html aus Deinem forms-Ordner und nenne es index2.html.
+

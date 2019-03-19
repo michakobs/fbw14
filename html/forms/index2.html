@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Forms</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Mitgliedsantrag</legend>
+            Name: <input type="text" placeholder="z.B. Hans" required/><br>
+            Email: <input type="email" placeholder="z.B. hans@gmx.de" required/><br>
+            <br>
+
+            Geschlecht: <br>
+            <input type="radio" name="gender"/>Männlich<br>
+            <input type="radio" name="gender"/>Weiblich<br>
+            <input type="radio" name="gender"/>Sonstiges<br>
+            <br>
+            
+            Sportarten:<br>
+            <input type="checkbox">Fussball<br>
+            <input type="checkbox">Tennis<br>
+            <input type="checkbox">Basketball<br>
+            <input type="checkbox">Yoga<br>
+            <input type="checkbox">Zumba<br>
+            <input type="checkbox">Seniorensport<br>
+            <input type="checkbox">Senioren Aquafitness<br>
+            <br>
+
+            Altersgruppe:<br>
+            <select>
+                <option>0 - 20</option>
+                <option>21 - 40</option>
+                <option>41 - 60</option>
+                <option>61+</option>
+            </select>
+            <br><br>
+
+            Kommentar:<br>
+            <textarea cols="40" rows="10" maxlength="500" style="resize: none"></textarea>
+
+            <br><br>
+
+            <fieldset>
+                <legend>Bankdaten:</legend>
+                IBAN:<br><input type="text" name="" id="" title="Eine IBAN ist eine neuartige Kontonummer" placeholder="123"><br>
+                BIC:<br><input type="text" name="" id="">
+            </fieldset>
+
+
+            <br><br>
+            Eintrittsdatum:<br>
+            <input type="date">
+            
+            <br><br>
+            Mitgliedsfoto:<br>
+            <input type="file"/>
+
+            <br><br>
+            <input type="submit" value="Mitgliedsantrag absenden*">
+        </fieldset>      
+    </form>
+</body>
+</html>
