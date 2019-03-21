@@ -1,0 +1,19 @@
+dl {
+    margin: 10px 0 20px;
+    padding: 10px;
+    background: #353535;
+    color: #eee;
+    border: dashed 2px black;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+dl dt {
+    margin: 0 0 5px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+dl code {
+    background: inherit;
+    padding: 0;
+}

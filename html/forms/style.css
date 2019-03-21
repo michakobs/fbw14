@@ -1,0 +1,24 @@
+form {
+    background: red url(img/red_background.jpg);
+    background-size: 100% 100%;
+    color: white;
+    font-family: sans-serif;
+    margin-left: 25%;
+    padding: 20px;
+    width: 50%;
+}
+
+fieldset {
+    border: 1px solid #333;
+    padding: 40px;
+}
+
+fieldset, legend {
+    background: blue url(img/blue.jpg);
+    background-size: 100% 100%;
+}
+
+.input_elements {
+    display: inline-block;
+    width: 50px;
+}
