@@ -3,5 +3,72 @@
 * {
     margin: 0;
     padding: 0;
+    border: none;
 }
 
+body {
+    background: black url('images/background.jpg') top center no-repeat;
+    color: #333;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    padding: 0 0 10px;
+    margin: 0 0 10px;
+}
+
+form {
+    text-align: left;
+    max-width: 300px;
+    margin: 20px auto 0;
+}
+
+label {
+    background: #333;
+    color: white;
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+input {
+    margin: 0 0 10px;
+    padding: 5px;
+    width: 290px;
+}
+
+input[type="submit"] {
+    background: #333;
+    color: white;
+    cursor: pointer;
+    width: 300px;
+}
+
+.content-block {
+    background: url('images/transparent_white.png');
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#header {
+    margin-top: 20px;
+}
+
+#container {
+    margin: 0 auto;
+    width: 600px;
+}
+
+#content {
+    border: 10px solid black;
+}
+
+#footer {
+    background:  transparent;
+}

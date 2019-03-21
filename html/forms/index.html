@@ -5,23 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Forms</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <form>
         <fieldset>
             <legend>Profile Info</legend>
-            Name: <input type="text" placeholder="z.B. Hans" required/><br>
-            Email: <input type="email" placeholder="z.B. hans@gmx.de" required/><br>
+            <label class="input_elements" for="contact_name">Name:</label> 
+            <input id="contact_name" type="text" placeholder="z.B. Hans" required/>
             <br>
-            Geschlecht: <br>
-            <input type="radio" name="gender"/>Männlich<br>
-            <input type="radio" name="gender"/>Weiblich<br>
-            <input type="radio" name="gender"/>Sonstiges<br>
+            <label class="input_elements" for="contact_email">Email:</label>
+            <input id="contact_email" type="email" placeholder="z.B. hans@gmx.de" required/><br>
             <br>
-
+            Geschlecht:<br>
+      
+            <input type="radio" name="gender" id="male"/>
+            <label for="male">Männlich</label><br>
+      
+            <input type="radio" name="gender" id="female"/>
+            <label for="female">Weiblich</label><br>
+      
+            <input type="radio" name="gender" id="else"/>
+            <label for="else">Sonstiges</label><br>
+            <br>
+            
             Art des Computers:<br>
-            <input type="checkbox">Ich hab einen Laptop<br>
-            <input type="checkbox">Ich hab einen Computer<br>
+            <label><input type="checkbox">Ich hab einen Laptop</label><br>
+            <label><input type="checkbox">Ich hab einen Computer</label><br>
             <br>
 
             Altersgruppe:<br>

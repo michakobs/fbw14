@@ -1,0 +1,41 @@
+code {
+    background: white;
+    color: #e96c28;
+    display: block;
+    padding: 5px;
+}
+
+#eule {
+    background-image: url('img/eule.png');
+    height: 600px;
+}
+
+#single-eule {
+    background-image: url('img/eule.png');
+    background-repeat: no-repeat;
+    height: 200px;
+}
+
+#position-eule {
+    background-image: url('img/eule.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 200px;
+}
+
+#center-eule {
+    background-image: url('img/eule.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+}
+
+#abkuerzungs-eule {
+    background: pink url('img/eule.png') center 50% no-repeat;
+    height: 200px;
+}
+
+#pink {
+    background-color: pink;
+}
+
