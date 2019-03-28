@@ -28,3 +28,20 @@
     margin-left: 20px;
 }
 
+.header-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+    height: 300px;
+    align-items: center; /* vertikale version von justify content */
+}
+
+.social,.subscribe {
+    border: 1px solid #5995DA;
+    align-self: flex-end;
+}
