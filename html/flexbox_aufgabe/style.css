@@ -59,5 +59,16 @@ a {
 .thumbnail {
     margin: 5px 10px;
     cursor: pointer;
+    background-color: black;
     box-shadow: 0 4px 8px 0 rgba(31, 31, 31, 0.2), 0 6px 20px 0 rgba(31, 31, 31, 0.19);
+}
+
+.thumbnail:hover {
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);    
+}
+
+.movie-description {
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    padding: 3px;
 }
