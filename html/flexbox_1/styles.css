@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.menu-container {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    background-color: #5995DA;
+    padding: 20px 0;
+}
+
+.menu {
+    border: 1px solid #fff;
+    width: 900px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.links {
+    display: flex;
+    width: 180px;
+    justify-content: flex-end;
+}
+
+.login {
+    margin-left: 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+    height: 300px;
+    align-items: center; /* vertikale version von justify content */
+}
+
+.social,.subscribe {
+    border: 1px solid #5995DA;
+    align-self: flex-end;
+}
