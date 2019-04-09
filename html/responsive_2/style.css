@@ -1,0 +1,50 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    height: 70px;
+    background-color: aquamarine;   
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.article {
+    padding: 4px;
+    margin: 10px;
+    background: rgb(255, 43, 43);
+}
+
+.footer {
+    position: sticky;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    background: blueviolet;
+}
+
+/* 
+
+Aufgabe: Mache dieses Layout Responsive für eine Breite von
+kleiner als 769 Pixel. 
+
+1) Lass die Artikel untereinander erscheinen.
+
+2) Der Footer soll nur sichtbar sein
+wenn der Nutzer die Seite bis zu Ende gescrollt hat!
+
+*/
+
+@media screen and (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .footer {
+        position: relative;
+    }
+}
