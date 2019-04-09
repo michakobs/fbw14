@@ -66,3 +66,45 @@ p {
 .p3 {
     background-image: url('crowd_3.jpg');
 }
+
+.intro-override {
+    position: static;
+    width: auto;
+}
+
+.body-override {
+    background: url(grass.jpg);
+}
+
+.contact {
+    width: 400px;
+    margin: 20px auto;
+}
+
+legend {
+    font-size: 1.4em;
+    color: white;
+    font-weight: bold;
+    background: rgba(0,0,0,0.7);
+    padding: 4px;
+}
+
+fieldset {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+input, textarea, button {
+    display: block;
+    font-size: 1.3em;
+    width: 100%;
+}
+
+input, textarea {
+    text-align: center;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 10px;
+}
+
