@@ -1,0 +1,110 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    height: 100%;
+}
+
+.video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.intro {
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+a {
+    text-decoration: underline;
+    color: white;
+    font-size: 1.2em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.menu {
+    display: flex;
+    font-size: 1.3em;
+}
+
+.menu-item {
+    margin-right: 20px;
+}
+
+.parallax {
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.p1 {
+    background-image: url('crowd_1.jpg');
+}
+
+.p2 {
+    background-image: url('crowd_2.png');
+}
+
+.p3 {
+    background-image: url('crowd_3.jpg');
+}
+
+.intro-override {
+    position: static;
+    width: auto;
+}
+
+.body-override {
+    background: url(grass.jpg);
+}
+
+.contact {
+    width: 400px;
+    margin: 20px auto;
+}
+
+legend {
+    font-size: 1.4em;
+    color: white;
+    font-weight: bold;
+    background: rgba(0,0,0,0.7);
+    padding: 4px;
+}
+
+fieldset {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+input, textarea, button {
+    display: block;
+    font-size: 1.3em;
+    width: 100%;
+}
+
+input, textarea {
+    text-align: center;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 10px;
+}
+

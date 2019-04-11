@@ -1,0 +1,42 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes example {
+    0% {
+        left: 0px;
+        top: 0px;
+        background-color: red;
+    }
+    25% {
+        left: 200px;
+        top: 0px;
+        background-color: blue;
+    }
+    50% {
+        left: 200px;
+        top: 200px;
+        background-color: yellow;
+    }
+    75% {
+        left: 0px;
+        top: 200px;
+        background-color: green;
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+        background-color: red;
+    }
+}
