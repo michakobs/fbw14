@@ -1,0 +1,112 @@
+/* Instructions
+There are 6 boxes on the page. Style the box as follows: 
+0px-600px  */
+
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.c0 {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.c0 {
+    border: 2px solid red;
+}
+
+.c1 {
+    background-color: purple;
+}
+
+.c2 {
+    background-color: blueviolet;
+}
+
+.c3 {
+    background-color: blue;
+}
+
+.c4 {
+    background-color: green;
+}
+
+.c5 {
+    background-color: yellow;
+}
+
+.c6 {
+    background-color: darkorange;
+}
+
+.c7 {
+    background-color: red;
+}
+
+
+@media screen and (max-width: 600px) {
+    .c1,
+    .c2,
+    .c3,
+    .c4,
+    .c5,
+    .c6,
+    .c7 {
+        display: flex;
+        flex-flow: row wrap;
+        height: 150px;
+        width: 100%;
+        flex-grow: 1;
+    }
+    
+}
+
+@media screen and (min-width: 601px) {
+    .c1,
+.c2 {
+    height: 150px;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.c3,
+.c4,
+.c5 {
+    height: 150px;
+    flex: 2 2 auto;
+}
+
+.c6,
+.c7 {
+    height: 150px;
+    flex-grow: 1;
+    width: 100%;
+}
+}
+
+@media screen and (min-width: 801px) {
+    .c1,
+.c2 {
+    height: 150px;
+    flex-grow: 1;
+    width: 50%;
+}
+
+.c3,
+.c4,
+.c5 {
+    height: 150px;
+    flex-grow: 1;
+    flex-grow: 1;
+    width: 33.33%
+}
+
+
+.c6,
+.c7 {
+    height: 150px;
+    flex-grow: 1;
+    width: 50%;
+}
+}

@@ -3,6 +3,43 @@ body {
     margin: 0 auto;
 }
 
+.c0 div {
+    height: 150px; 
+}
+
+.c0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+    .c0 div {
+        width: 100%;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 601px) and (max-width: 800px) {
+    .c1, .c2, .c6, .c7 {
+        width: 100%;
+    }
+}
+
+/* Tablet + Desktop */
+@media screen and (min-width: 601px) {
+    .c3, .c4, .c5 {
+        width: calc(100%/3);
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 801px) {
+    .c1, .c2, .c6, .c7 {
+        width: 50%;
+    }
+}
+
 .c0 {
     border: 2px solid red;
 }
