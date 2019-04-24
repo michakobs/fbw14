@@ -1,14 +1,25 @@
-.header,
-.karussell,
-.karten {
-    background: blue;
+html, body {
+    height: 100%;
 }
 
-.header>div {
+.header {
+    height: 120px;
+}
+
+.main {
+    height: 100%;
+}
+
+.header,
+.navbar, 
+.karussell,
+.karten {
+    background: rgb(55,0,255);
+}
+span {
     border: 1px solid black;
     color: white;
-    font-size: 25px;
-    margin-left: 8px;
+    font-size: 25px;    
 }
 
 .navbar-dark .navbar-nav .nav-link,
@@ -29,4 +40,7 @@
 .card-body {
     margin-top: calc(80px - 0.5em);
     padding-bottom: 20px;
+}
+input.form-control {
+    width: 50%;
 }
