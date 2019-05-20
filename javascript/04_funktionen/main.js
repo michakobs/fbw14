@@ -181,6 +181,32 @@ var dummyValueExpression = function() {
 // Schreibe eine Funktion gehtInRente die als Parameter einen
 // Namen und ein Geburtsdatum hat. Die Funktionen soll auf die Konsole
 // das aktuelle Alter ausgeben. Gegeben sei, dass in Deutschland alle
-// mit 67 in Rente. Die Funktion soll zurückggeben, in wievielen Jahren
+// mit 67 in Rente. Die Funktion soll zurückggeben (return), in wievielen Jahren
 // die Person in Rente geht.
 
+function gehtInRente(name, geburtsdatum) {
+    var alter = 2019 - geburtsdatum;
+    console.log(alter);
+
+    if(alter < 67) {
+        console.log(`${name} geht in ${67 - alter} Jahren in Rente`);
+        return 67 - alter;
+    }
+    else {
+        return 0;
+    }
+}
+
+// Nikolaus-Funktion - zum Debuggen
+function dasHausVomNikolaus() {
+    console.log('das');
+    console.log('ist');
+    console.log('das');
+    console.log('haus');
+    console.log('vom');
+    console.log('ni');
+    console.log('ko');
+    console.log('laus');
+}
+
+dasHausVomNikolaus();
