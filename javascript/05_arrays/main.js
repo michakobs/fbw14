@@ -257,6 +257,11 @@ console.log(number2);
 
 numbersLetters[27] = parseInt(numbersLetters[27]);
 
+// exkurs: numbers nach string konvertieren
+var numberToConvert = 17;
+var convertedStr = numberToConvert.toString();
+console.log(`konvertierter String: ${convertedStr}`);
+
 var k = 5;
 // k soll um 1 erhöht werden
 k = k + 1;
@@ -276,3 +281,35 @@ j--; // minus 1
 --j; // minus 1
 
 
+// nested arrays
+var nestedArray1 = [
+    [
+        'hallo', // 0
+        'welt'   // 1
+    ] // 0
+];
+
+console.log(nestedArray1[0][1]);
+
+console.log(nestedArray1);
+
+var nestedArray2 = [
+    [1,2,3], // 0 
+    [4,5,6], // 1 
+    [7,8,9]  // 2 
+];
+
+// Aufgabe:
+// Index von: 6? 8? 1? [7,8,9]? 
+
+console.log(nestedArray2[1][2]); // 6
+console.log(nestedArray2[2][1]); // 8
+console.log(nestedArray2[0][0]); // 1
+console.log(nestedArray2[2]); // [7,8,9]
+
+// slice - kopiert ein array in ein anderes
+
+var kopiereMich = [1,2,3,4,5,6,7];
+var kopie = kopiereMich.slice();
+
+console.log(kopie);
