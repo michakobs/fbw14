@@ -286,3 +286,59 @@ var meinZweitesRechteck = {
 console.log( meinZweitesRechteck.breite );
 flaeche(meinRechteck);
 meinZweitesRechteck.flaeche();
+
+
+// Aufgabe:
+// 
+// Erstelle ein neues Objekt namens objIch.
+// objIch soll einen firstname, einen lastname und eine city
+// haben. Außerdem soll es eine Methode haben namens umzug, die
+// einen Parameter erwartet namens newCity. umzug soll bei Aufruf
+// die city von objIch mit newCity überschreiben und newCity ausgeben.
+
+var objIch = {
+    firstname: 'John',
+    lastname: 'Doe',
+    city: 'Berlin',
+    umzug: function(newCity) {
+        this.city = newCity; // überschreiben wir city mit newCity
+        console.log(this.city);        
+    }
+}
+
+objIch.umzug('Leipzig');
+
+// anwendung des object-wissens auf bibliotheks-objekte
+// console.log - ist eine methode des objekts console
+
+function q(p) {
+    console.log(p);
+}
+
+q('Hallo World');
+
+// Math-object
+
+// Math.floor
+var f = 2.34343;
+var floorF = Math.floor(f);
+q(`floor von ${f} ist ${floorF}`);
+
+// Math.ceil
+var ceilingF = Math.ceil(f);
+q(`ceil von ${f} ist ${ceilingF}`);
+
+// Math.random
+var rand = Math.random();
+q(`rand ist zwischen 0 und 1 = ${rand}`);
+
+// Aufgabe
+// 
+// Erstelle eine Funktion zufallszahl die zwei Parameter entgegen-
+// nimmt: min und max. Min und max sollen zwei Ganzzahlen sein.
+// Wobei min < max sein soll und beide größer als 0 -> Falls diese
+// Bedingungen nicht erfüllt sind, soll zufallszahl false zurückgeben.
+// Ansonsten soll zufallszahl eine zufällige Ganzzahl zwischen min und max
+// zurückggeben.
+//
+// Tipp: Benutze die oben genannten Math-Methoden.
