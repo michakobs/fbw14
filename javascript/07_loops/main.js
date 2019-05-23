@@ -173,3 +173,37 @@ while (i < numbers.length) {
 }
 
 // SCHÖNEN FEIERABEND :D 
+
+
+var numbers = [13, 3, 10, 12, 15, -1];
+console.log(numbers);
+do {
+    var caseFound = false;
+    for (var i = 0; i < numbers.length; i++) {
+        console.log(i);
+        if (numbers[i] > numbers[i + 1]) { // ist 13 größer als 3? 
+            caseFound = true;
+            var smallerNumber = numbers[i + 1]; // Zwischenspeicher smallerNumber = 3
+            numbers[i + 1] = numbers[i]; // 2. position wird die 13 gespeichert
+            numbers[i] = smallerNumber; // 1. position wird die 3 gespeichert
+        }
+        console.log(numbers);
+    }
+
+} while (caseFound);
+
+
+// Pyramide 
+function tannenbaum(lines) {
+    for (var i = 0; i < lines; i++) {
+        var starOutput = "";
+        for (var j = lines; j > i; j--) {
+            starOutput += " ";
+        }
+        for (var k = 0; k <= i; k++) {
+            starOutput += " *";
+        }
+        console.log(starOutput);
+    }
+}
+tannenbaum(10);
