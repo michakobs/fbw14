@@ -1,3 +1,5 @@
+
+
 // "altes" JavaScript, vor ECMAScript 2015
 
 var x = 2;
@@ -39,6 +41,24 @@ console.log('k = ' + k);
 
 // var
 // - sichtbar außerhalb von anonymen blöcken 
-//   for, while, if, switch, ...
-// - wieder zuweisbar/überschreibbar
+//   for, while, if, switch, ... 
+// - wieder zuweisbar/üb+erschreibbar 
 
+let v = 10;
+v = 15;
+console.log('v = ' + v);
+
+for(let g=0; g<10; g++) {
+    console.log('g = ' + g);
+}
+// console.log('g = ' + g);
+
+const h = 5;
+// h = 8; // fehler, weil konstante
+
+{
+    const r = 7;
+    let r2 = 14;
+}
+console.log(r2);
+console.log(r);
