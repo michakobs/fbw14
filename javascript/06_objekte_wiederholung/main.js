@@ -29,10 +29,6 @@ person.toString();
 
 
 
-
-
-
-
 // Ein Konstruktor ist wie eine Schablone, 
 // wie ein Schema, das man selbst füllen kann
 // Auch genannt Template oder Prototype 
