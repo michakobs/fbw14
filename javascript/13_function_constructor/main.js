@@ -246,3 +246,5 @@ let retirementIceland = retirement(68);
 retirementUS(1990);
 retirementGermany(1990);
 retirementIceland(1990);
+
+console.log('null'+'null');
