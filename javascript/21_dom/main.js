@@ -21,7 +21,7 @@ pets.forEach(function (element) { // forEach Schleife, extra für Arrays ohne in
 
 let myObject = {
     // key : value Pärchen
-    name: 'Martina', 
+    name: 'Martina',
     age: 35,
     city: 'Berlin'
 };
@@ -35,3 +35,31 @@ for (let key in myObject) { // for...in Schleife
     console.log(key); // keys only
 }
 
+// Per ID einen Button auswählen
+let btn = document.getElementById('btn'); // Singular!!!
+console.log(btn);
+
+// Wir wollen eine Liste haben!!!
+let list = document.getElementsByTagName('li'); // Plural
+console.log(list);
+
+btn.addEventListener('click', function (event) {
+    console.log(event);
+    console.log(btn.style);
+    if (btn.style.background !== 'aquamarine') {
+        btn.style.background = 'aquamarine';
+        btn.innerText = 'Get them out of here';
+        btn.style.color = 'white';
+        for (let i = 0; i < list.length; i++) {
+            // meistens über Listen iterieren
+            console.log(list[i]);
+
+        };
+        //list.style.display = 'block'; // einblenden
+    } else {
+        btn.style.background = 'red';
+        btn.innerText = 'Show favorite destinations';
+        btn.style.color = 'black';
+        //list.style.display = 'none'; // ausblenden
+    }
+});
