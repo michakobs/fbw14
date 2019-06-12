@@ -1,0 +1,20 @@
+* {
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background: red;
+    border: 2px solid red;
+    font-size: xx-large;
+    height: 50px;
+}
+
+li {
+    background: green;
+    display: none;
+    list-style: none;
+    margin: 20px 0;
+    padding: 10px;
+}

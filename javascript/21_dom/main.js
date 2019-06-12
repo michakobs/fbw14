@@ -20,11 +20,18 @@ pets.forEach(function (element) { // forEach Schleife, extra für Arrays ohne in
 });
 
 let myObject = {
+    // key : value Pärchen
     name: 'Martina', 
     age: 35,
     city: 'Berlin'
 };
 
 for (let eigenschaft in myObject) { // for...in Schleife
-    console.log(myObject[eigenschaft]);
+    //console.log(myObject[eigenschaft]); // values only
+    console.log(eigenschaft + " : " + myObject[eigenschaft]); // key: value ausgabe
 }
+
+for (let key in myObject) { // for...in Schleife 
+    console.log(key); // keys only
+}
+
