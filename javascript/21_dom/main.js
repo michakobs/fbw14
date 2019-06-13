@@ -89,3 +89,10 @@ checkObject.addEventListener('click', function () {
         passwordObject.setAttribute('type', 'password');
     }
 });
+
+let bodyObject = document.body;
+let newsletterObject = document.getElementById('newsletterOverlay');
+
+console.log(bodyObject);
+console.log(newsletterObject);
+
