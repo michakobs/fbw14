@@ -53,13 +53,39 @@ btn.addEventListener('click', function (event) {
         for (let i = 0; i < list.length; i++) {
             // meistens über Listen iterieren
             console.log(list[i]);
-
-        };
+            list[i].style.display = 'block';
+        }
         //list.style.display = 'block'; // einblenden
     } else {
         btn.style.background = 'red';
         btn.innerText = 'Show favorite destinations';
         btn.style.color = 'black';
         //list.style.display = 'none'; // ausblenden
+        for (let i = 0; i < list.length; i++) {
+            // meistens über Listen iterieren
+            console.log(list[i]);
+            list[i].style.display = 'none';
+        }
+    }
+});
+
+// Wir holen uns die beiden HTML-Elemente
+let passwordObject = document.getElementById('psw');
+let checkObject = document.getElementById('chb');
+
+// https://www.w3schools.com/jsref/prop_checkbox_checked.asp
+// function check() {
+//     document.getElementById('chb').checked = true;
+// }
+
+// function uncheck() {
+//     document.getElementById('chb').checked = false;
+// }    
+
+checkObject.addEventListener('click', function () {
+    if (this.checked) {
+        passwordObject.setAttribute('type', 'text');
+    } else {
+        passwordObject.setAttribute('type', 'password');
     }
 });
