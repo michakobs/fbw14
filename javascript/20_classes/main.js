@@ -35,6 +35,7 @@ let sarah = new Person_ES6('sarah', 32);
 class Athlete_ES6 extends Person_ES6 {
     constructor(name, age, sport) {
         super(name, age); // ruft parent konstruktor auf
+        this.sport = sport;
     }
 
     run() {}
