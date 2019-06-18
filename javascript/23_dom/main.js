@@ -20,6 +20,8 @@ const summeObj = document.getElementById('summe');
 summeObj.onclick = function() {
     // diese funktion wird aufgerufen, wenn der summe Button geklickt wird
 
-    alert(summand1Obj.value);
-    alert(summand2Obj.value);
+    // 1. lösungsweg: inhalt identisch
+    if(summand1Obj.value == parseInt(summand1Obj.value) && summand2Obj.value == parseInt(summand2Obj.value)) {
+        let summe = parseInt(summand1Obj.value) + parseInt(summand2Obj.value);
+    }
 }
