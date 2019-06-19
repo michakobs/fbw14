@@ -90,10 +90,12 @@ checkObject.addEventListener('click', function () {
     }
 });
 
-// der Body ist einfacher direkt als über die Getter zu holen
+// der Body ist einfacher direkt als über die Get-Methoden zu holen
 let bodyObject = document.body;
 // Unser Modal Newsletter Objekt holen
-let newsletterObject = document.getElementById('newsletterOverlay');
+let newsletterObject = document.querySelector('section');
+// hier brauchen wir das x 
+let closeObject = document.querySelector('span');
 
 console.log(bodyObject);
 console.log(newsletterObject);
@@ -103,7 +105,13 @@ console.log(newsletterObject);
 document.body.addEventListener('mousemove', function showNewsletterBox(event) {
     if (event.clientY < 10) {
         bodyObject.style.background = 'gray';
-        newsletterObject.style.display = 'block';
+        //newsletterObject.style.display = 'block';
+        //ich will eine klasse hinzufügen "showOff"
+        newsletterObject.classList.add('showOff');
         event.currentTarget.removeEventListener('mousemove', showNewsletterBox);
     }
+});
+
+closeObject.addEventListener('click', function (event) {
+    newsletterObject.classList.remove('showOff');
 });

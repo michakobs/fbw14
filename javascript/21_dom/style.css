@@ -20,13 +20,18 @@ li {
     padding: 10px;
 }
 
-#newsletterOverlay {
+section {
     background: yellow;
     display: none;
     height: 100vh;
     margin: 0 auto;
+    position: relative;
     text-align: center;
     width: 50%;
+}
+
+.showOff {
+    display: block;
 }
 
 label {
@@ -40,4 +45,11 @@ input[type='email'] {
     width: 450px;
     margin: 20px;
     font-size: 25px;
+}
+
+span {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0.5vw;
 }
