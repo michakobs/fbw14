@@ -10,6 +10,24 @@ const shoppinglistArrayObj = document.getElementsByTagName('li');
 // getElementById - 1 element, keine list
 // getElementsByTagName - N elemente, list
 
+// Aufgabe:
+// 
+// Erweitere Die Funktionalität von add gift.
+// Jedes mal, wenn ein neues gift in der Liste
+// hinzugefügt wird, soll ein neues Objekt in
+// das Array basket hinzugefügt werden.
+// Jedes Objekt hat einen Namen und einen Zufalls-
+// preis. Also wenn der Benutzer eine "Banane" 
+// hinzufügt, dann soll ein neues Objekt in 
+// das Basket-Array hinzugefügt werden:
+// Bsp:
+// { name: 'Banane', price: 0.50 }
+//
+// basket würde bei einem gift so aussehen:
+//
+// [{ name: 'Banane', price: 0.50 }]
+
+const basket = [];
 addgiftObj.onclick = function() {
     // neues li erzeugen
     const newLiObj = document.createElement('li');
@@ -17,6 +35,13 @@ addgiftObj.onclick = function() {
     newLiObj.innerHTML = giftObj.value;
     // li der liste hinzufügen
     shoppinglistObj.appendChild(newLiObj);
+    
+    let basketItem = {
+        name: giftObj.value,
+        price: Math.floor(Math.random() * 20)
+    };
+    
+    basket.push(basketItem);
     giftObj.value = '';
 }
 
@@ -30,17 +55,20 @@ addgiftObj.onclick = function() {
 // tipp: nutze google für effizientes selektieren der DOM elemente. schaue dir die methode .remove() an.
 
 removefirstObj.onclick = function() {
-    if(shoppinglistObj.length > 0) {
-        shoppinglistObj[0].remove();
+    if(shoppinglistArrayObj.length > 0) {
+        shoppinglistArrayObj[0].remove();
+        basket.shift();
     }
     else {
         alert('Keine Items zum entfernen');
     }
+
 }
     
 removelastgiftObj.onclick = function() { 
-    if(shoppinglistObj.length > 0) {
-        shoppinglistObj[shoppinglistObj.length - 1].remove();
+    if(shoppinglistArrayObj.length > 0) {
+        shoppinglistArrayObj[shoppinglistArrayObj.length - 1].remove();
+        basket.pop();
     }
     else {
         alert('Keine Items zum entfernen');
@@ -75,31 +103,30 @@ removelastgiftObj.onclick = function() {
 // removeAll10();
 
 removeObj.onclick = function() {
-    for(let i=0; i<shoppinglistArrayObj.length;i++) {
+    for(let i=0; i<shoppinglistArrayObj.length; i++) {
         // bei welchem item bin ich gerade?
 
         if(giftObj.value === shoppinglistArrayObj[i].innerHTML) {
             shoppinglistArrayObj[i].remove();
+            basket.splice(i, 1);
             i--;
         }
     }
 }
 
-const basket = [];
-
 // Aufgabe:
 // 
-// Erweitere Die Funktionalität von add gift.
-// Jedes mal, wenn ein neues gift in der Liste
-// hinzugefügt wird, soll ein neues Objekt in
-// das Array basket hinzugefügt werden.
-// Jedes Objekt hat einen Namen und einen Zufalls-
-// preis. Also wenn der Benutzer eine "Banane" 
-// hinzufügt, dann soll ein neues Objekt in 
-// das Basket-Array hinzugefügt werden:
-// Bsp:
-// { name: 'Banane', price: 0.50 }
-//
-// basket würde bei einem gift so aussehen:
-//
-// [{ name: 'Banane', price: 0.50 }]
+// Implementiere die Funktionalität vom Button sum,
+// der den Wert des Warenkorbs ausgibt. Benutze
+// dafür einen alert.
+
+sumObj.onclick = function() {
+
+    let sum = 0;
+    for(let i=0; i<basket.length; i++) {
+        console.log( basket[i].price );
+        sum += basket[i].price;
+    }
+
+    alert('Warenkorbwert: ' + sum);
+}
