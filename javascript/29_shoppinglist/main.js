@@ -4,7 +4,8 @@ const removelastgiftObj = document.getElementById('removelastgift');
 const removefirstObj = document.getElementById('removefirst');
 const removeObj = document.getElementById('remove');
 const sumObj = document.getElementById('sum');
-const shoppinglistObj = document.getElementsByTagName('li');
+const shoppinglistObj = document.getElementById('shoppinglist');
+const shoppinglistArrayObj = document.getElementsByTagName('li');
 
 // getElementById - 1 element, keine list
 // getElementsByTagName - N elemente, list
@@ -47,3 +48,58 @@ removelastgiftObj.onclick = function() {
 
     // listObj[listObj.length - 1].remove();
 }
+
+// Aufgabe:
+//
+// 1) Erstelle ein Beispiel-Array von
+//    exampleArray = [2,9,10,11,10,12,10,23];
+//    
+// 2) Schreibe eine Funktion, die alle 10 aus dem
+//    Array herauslöscht.
+// 
+//    Tipp: schaue Dir splice() an (z.b. mit Google)
+
+// const exampleArray = [
+//     2,9,10,11,10,12,10,10,23
+// ];
+
+// function removeAll10() {
+//     for(let i=0; i<exampleArray.length; i++) {
+//         if(exampleArray[i] === 10) {
+//             exampleArray.splice(i, 1);
+//             i--;
+//         }
+//     }
+// }
+
+// removeAll10();
+
+removeObj.onclick = function() {
+    for(let i=0; i<shoppinglistArrayObj.length;i++) {
+        // bei welchem item bin ich gerade?
+
+        if(giftObj.value === shoppinglistArrayObj[i].innerHTML) {
+            shoppinglistArrayObj[i].remove();
+            i--;
+        }
+    }
+}
+
+const basket = [];
+
+// Aufgabe:
+// 
+// Erweitere Die Funktionalität von add gift.
+// Jedes mal, wenn ein neues gift in der Liste
+// hinzugefügt wird, soll ein neues Objekt in
+// das Array basket hinzugefügt werden.
+// Jedes Objekt hat einen Namen und einen Zufalls-
+// preis. Also wenn der Benutzer eine "Banane" 
+// hinzufügt, dann soll ein neues Objekt in 
+// das Basket-Array hinzugefügt werden:
+// Bsp:
+// { name: 'Banane', price: 0.50 }
+//
+// basket würde bei einem gift so aussehen:
+//
+// [{ name: 'Banane', price: 0.50 }]
