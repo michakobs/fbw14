@@ -17,3 +17,13 @@ addgiftObj.onclick = function() {
     shoppinglistObj.appendChild(newLiObj);
     giftObj.value = '';
 }
+
+// Aufgabe:
+//
+// Implementiere die Buttons removelast und
+// removefirst.
+// removefirst: entfernt erstes item in der liste
+// removelast: entfernt letztes item in der liste
+// 
+// tipp: nutze google für effizientes selektieren der DOM elemente. schaue dir die methode .remove() an.
+
