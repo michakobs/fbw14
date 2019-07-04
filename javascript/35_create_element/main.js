@@ -35,3 +35,32 @@ let showString = setInterval(function () {
                 //clearInterval(showString);
         }
 }, 100);
+// Formular 
+const myFormObject = document.getElementById('myForm');
+const textInputObject = document.getElementById('textInput');
+const todoListObject = document.getElementById('todoList');
+// On Submit wird bei Enter und Klick auf Button im Formular abgeschickt
+myFormObject.onsubmit = function (event) {
+        // verhindert den Reload der sonst nach Submit immer die Felder leert 
+        // und den Inhalt an die Action schickt
+        event.preventDefault();
+
+        const taskItem = document.createElement('LI');
+        taskItem.innerText = textInputObject.value;
+
+        const closeButton = document.createElement('BUTTON');
+        closeButton.innerText = 'x'; 
+        // ALTERNATIV closeButton.innerHTML = "<button>x</button>"
+        //closeButton.classList.add('close');
+
+        closeButton.onclick = function () {
+                this.parentElement.remove();
+        };
+
+        // Anhängen der Items in den DOM 
+        taskItem.append(closeButton);
+        todoListObject.append(taskItem);
+
+        // Reset // Leeren des Input Felds
+        textInputObject.value = '';
+}
