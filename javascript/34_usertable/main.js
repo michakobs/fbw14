@@ -39,6 +39,16 @@ adduserObj.onclick = function() {
     newTr.appendChild(newTdId);
     newTr.setAttribute('data-id', id);
 
+    // X button erstellen
+    const newXBtn = document.createElement('button');
+    newXBtn.innerText = 'X';
+    newXBtn.onclick = function() {
+        const trToDelete = document.querySelector(`[data-id="${id}"]`);
+        trToDelete.remove();
+    }
+    newTdBtn = document.createElement('td');
+    newTdBtn.appendChild(newXBtn);
+    newTr.appendChild(newTdBtn);
+
     usertableObj.appendChild(newTr);
 }
-
