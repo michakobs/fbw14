@@ -22,6 +22,6 @@ span:hover {
     font-size: 1.1em;
 }
 
-#info, #impressum {
+#info, #impressum, #faq {
     display: none
 }
