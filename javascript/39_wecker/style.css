@@ -34,8 +34,24 @@ button {
     text-align: center;
 }
 
-#buttons-clock {
+.buttons-clock, .buttons-setalarm {
     width: 460px;
     margin: 0 auto;
     text-align: center;
+}
+
+input {
+    font-size: 3.4em;
+    margin: 8px;
+    width: 400px;
+    text-align: center;
+}
+
+#setalarm {
+    display: none;
+    text-align: center;
+}
+
+#buttonssetalarm {
+    display: none;
 }
