@@ -132,6 +132,21 @@ btnNewUserObj.onclick = function() {
     const emailObj = document.getElementById('email');
     const newEmail = emailObj.value;
 
+    if(newName.length === 0) {
+        alert('Name darf nicht leer sein!');
+        return;
+    }
+
+    if(newUsername.length === 0) {
+        alert('Username darf nicht leer sein!');
+        return;
+    }
+
+    if(newEmail.length === 0) {
+        alert('Email darf nicht leer sein!');
+        return;
+    }    
+
     let url = 'http://cileria.com:3050/users';
     const xhr = new XMLHttpRequest();
     xhr.open('POST', url);
@@ -141,7 +156,7 @@ btnNewUserObj.onclick = function() {
             alert('User angelegt.')
         } 
         else {
-
+            alert('Unerwarteter Fehler! Bitte den Systemadministrator anrufen! 030/3843823');
         }
     }
 
