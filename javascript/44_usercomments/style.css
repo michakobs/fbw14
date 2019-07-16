@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    margin-top: 10px;
+    display: flex;
+}
+
+.navlink {
+    margin-left: 10px;
+    background-color: rgb(0, 219, 219);
+    padding: 4px;
+    cursor: pointer;
+}
+
