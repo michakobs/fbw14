@@ -18,11 +18,28 @@ btnShowUsersObj.onclick = function() {
             // Aufgabe:
             //
             // Basierend auf den Daten, baue eine Tabelle.
+
+            const tableObj = document.createElement('table');
+                        
+
+            console.log(xhr.responseText);
+            const responseObj = JSON.parse(xhr.responseText);
+
+            // älterer iterator
+            // for(let i=0; i<responseObj.length; i++) {
+            //     console.log( responseObj[i].name );
+            // }
+
+            // neuerer iterator für arrays
+            for(let e of responseObj) {
+                
+            }
         }
         else {
 
         }
     }
+    xhr.send();
 }
 
 btnAddUserObj.onclick = function() {
