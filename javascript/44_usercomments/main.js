@@ -8,6 +8,7 @@ const btnAddUserObj = document.getElementById('btnAddUser');
 const btnShowCommentsObj = document.getElementById('btnShowComments');
 const btnAddCommentObj = document.getElementById('btnAddComment');
 const containerObj = document.getElementById('container');
+const btnNewUserObj = document.getElementById('btnNewUser');
 
 // DRY - Dont repeat yourself
 // Aufgabe:
@@ -112,4 +113,8 @@ btnShowCommentsObj.onclick = function () {
 
 btnAddCommentObj.onclick = function () {
     containerObj.innerText = 'Add Comment';
+}
+
+btnNewUserObj.onclick = function() {
+    alert('hallo');
 }
