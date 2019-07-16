@@ -9,6 +9,7 @@ const btnShowCommentsObj = document.getElementById('btnShowComments');
 const btnAddCommentObj = document.getElementById('btnAddComment');
 const containerObj = document.getElementById('container');
 const btnNewUserObj = document.getElementById('btnNewUser');
+const adduserObj = document.getElementById('adduser');
 
 // DRY - Dont repeat yourself
 // Aufgabe:
@@ -76,6 +77,7 @@ function createTable(field1, field2, field3, field4, data) {
 }
 
 btnShowUsersObj.onclick = function () {
+    adduserObj.style.display = 'none';
     let url = 'http://cileria.com:3050/users';
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
@@ -90,10 +92,13 @@ btnShowUsersObj.onclick = function () {
 }
 
 btnAddUserObj.onclick = function () {
-    containerObj.innerText = 'Add User';
+    containerObj.innerText = '';
+    adduserObj.style.display = 'flex';
 }
 
 btnShowCommentsObj.onclick = function () {
+    
+    adduserObj.style.display = 'none';    
     let url = 'http://cileria.com:3050/comments';
 
     // Aufgabe: Baue eine Tabelle auf Basis
@@ -113,8 +118,38 @@ btnShowCommentsObj.onclick = function () {
 
 btnAddCommentObj.onclick = function () {
     containerObj.innerText = 'Add Comment';
+    adduserObj.style.display = 'none';    
 }
 
 btnNewUserObj.onclick = function() {
-    alert('hallo');
+
+    const nameObj = document.getElementById('name');
+    const newName = nameObj.value;
+
+    const usernameObj = document.getElementById('username');
+    const newUsername = usernameObj.value;
+
+    const emailObj = document.getElementById('email');
+    const newEmail = emailObj.value;
+
+    let url = 'http://cileria.com:3050/users';
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', url);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            alert('User angelegt.')
+        } 
+        else {
+
+        }
+    }
+
+    let body = {
+        name: newName,
+        username: newUsername,
+        email: newEmail
+    };
+
+    xhr.send( JSON.stringify(body) );
 }

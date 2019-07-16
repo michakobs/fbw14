@@ -32,7 +32,7 @@ td, th {
 }
 
 .adduser {
-    display: flex;
+    display: none;
     justify-content: center;
 }
 
