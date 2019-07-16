@@ -16,3 +16,17 @@
     cursor: pointer;
 }
 
+.container {
+    padding: 5px;
+}
+
+table { 
+    margin-top: 10px;
+    border: 1px solid black;
+} 
+
+td, th {
+    border: 1px solid black;
+    margin: 2px;
+    padding: 4px;
+}
