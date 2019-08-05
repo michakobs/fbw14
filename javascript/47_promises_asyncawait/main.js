@@ -1,7 +1,7 @@
 const addNumberBtnObj = document.getElementById('addNumberBtn');
 const addSomeNumbersDelayedCallbackBtnObj = document.getElementById('addSomeNumbersDelayedCallbackBtn');
 const addSomeNumbersDelayedPromiseBtnObj = document.getElementById('addSomeNumbersDelayedPromiseBtn');
-
+const addSomeNumbersDelayedAsyncAwaitBtnObj = document.getElementById('addSomeNumbersDelayedAsyncAwaitBtn');
 
 let count = 1;
 
@@ -61,6 +61,10 @@ addSomeNumbersDelayedPromiseBtnObj.onclick = () => {
     addSomeNumbersDelayedPromise();
 }
 
+addSomeNumbersDelayedAsyncAwaitBtnObj.onclick = () => {
+    addSomeNumbersDelayedAsyncAwait();
+}
+
 // Promise ist ein Container für eine asynchrone Funktion
 addNumberDelayedPromise = () => {
     // Promise-Container
@@ -69,14 +73,14 @@ addNumberDelayedPromise = () => {
         setTimeout(
             () => {
                 addNumber();
-                resolve();
+                // resolve();
                 
-                // if(Math.random() > 0.5) {
-                //     reject();
-                // }
-                // else {
-                //     resolve();
-                // }
+                if(Math.random() > 0.6) {
+                    reject();
+                }
+                else {
+                    resolve();
+                }
             },
             1000
         );
@@ -84,6 +88,7 @@ addNumberDelayedPromise = () => {
 }
 
 const addSomeNumbersDelayedPromise = () => {
+
     // addNumberDelayedPromise() // returned einen Promise
     // .then(() => { alert('Ok, hat geklappt') }) // then returned nochmal das Promise-Object
     // .catch((err) => {
@@ -91,9 +96,27 @@ const addSomeNumbersDelayedPromise = () => {
     // })
 
     addNumberDelayedPromise() // returned einen Promise
-    .then(() => { alert('Ok, hat geklappt') }) // then returned nochmal das Promise-Object
+    .then(addNumberDelayedPromise) // returned neuen Promise
+    .then(addNumberDelayedPromise)
+    .then(addNumberDelayedPromise)
+    .then(addNumberDelayedPromise)
     .catch((err) => {
-        alert('es gab einen fehler: ' + err);
-    })
+        alert('Error beim Promise!');
+    });
+    // falls hier schluss, ist .then() einfach nicht definiert
+}
 
+const addSomeNumbersDelayedAsyncAwait = async () => {
+
+    // syntactic sugar for .then 
+    try {
+        await addNumberDelayedPromise();
+        await addNumberDelayedPromise();
+        await addNumberDelayedPromise();
+        await addNumberDelayedPromise();
+    }
+    // syntactic sugar for .catch
+    catch(e) {
+        alert('Fehler, Promise rejected: ' + e);
+    }   
 }
