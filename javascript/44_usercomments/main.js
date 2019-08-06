@@ -10,6 +10,7 @@ const btnAddCommentObj = document.getElementById('btnAddComment');
 const containerObj = document.getElementById('container');
 const btnNewUserObj = document.getElementById('btnNewUser');
 const adduserObj = document.getElementById('adduser');
+const addcommentObj = document.getElementById('addcomment');
 
 // DRY - Dont repeat yourself
 // Aufgabe:
@@ -77,7 +78,10 @@ function createTable(field1, field2, field3, field4, data) {
 }
 
 btnShowUsersObj.onclick = function () {
+
     adduserObj.style.display = 'none';
+    addcommentObj.style.display = 'none';
+
     let url = 'http://cileria.com:3050/users';
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
@@ -91,34 +95,39 @@ btnShowUsersObj.onclick = function () {
     xhr.send();
 }
 
-btnAddUserObj.onclick = function () {
-    containerObj.innerText = '';
-    adduserObj.style.display = 'flex';
-}
 
 btnShowCommentsObj.onclick = function () {
     
-    adduserObj.style.display = 'none';    
-    let url = 'http://cileria.com:3050/comments';
+    adduserObj.style.display = 'none';   
+    addcommentObj.style.display = 'none';
 
+    let url = 'http://cileria.com:3050/comments';
+    
     // Aufgabe: Baue eine Tabelle auf Basis
     // der comments-Daten
-
+    
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.onload = function () {
         if (xhr.status === 200) {
             createTable('_id', 'name', 'email', 'body', xhr.responseText);
         } else {
-
+            
         }
     }
     xhr.send();
 }
 
+btnAddUserObj.onclick = function () {
+    containerObj.innerText = '';
+    adduserObj.style.display = 'flex';
+    addcommentObj.style.display = 'none';
+}
+
 btnAddCommentObj.onclick = function () {
-    containerObj.innerText = 'Add Comment';
-    adduserObj.style.display = 'none';    
+    containerObj.innerText = '';
+    adduserObj.style.display = 'none';
+    addcommentObj.style.display = 'flex';
 }
 
 btnNewUserObj.onclick = function() {

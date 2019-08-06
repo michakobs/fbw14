@@ -22,10 +22,11 @@
 
     </div>
 
-    <div class="adduser" id="adduser">
+    <!-- ist unsichtbar beim laden -->
+    <div class="addform" id="adduser">
         <div>
-            <input type="text" id="name" placeholder="name"/>
-            <input type="text" id="username" placeholder="username"/>
+            <input type="text" id="name" placeholder="name" />
+            <input type="text" id="username" placeholder="username" />
             <input type="text" id="email" placeholder="email" />
             <button id="btnNewUser">
                 Add User
@@ -33,6 +34,17 @@
         </div>
     </div>
 
+    <!-- ist auch unsichtbar beim laden -->
+    <div class="addform" id="addcomment">
+        <div>
+            <input type="text" id="name" placeholder="name" />
+            <input type="text" id="email" placeholder="email" />
+            <textarea id="commentText" rows="10" placeholder="Kommentar"></textarea>
+            <button id="btnNewUser">
+                Add Comment
+            </button>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 </body>

@@ -31,17 +31,17 @@ td, th {
     padding: 4px;
 }
 
-.adduser {
+.addform {
     display: none;
     justify-content: center;
 }
 
-.adduser div {
+.addform div {
     display: flex;
     flex-direction: column;
 }
 
-input {
+input, textarea {
     display: block;
     margin-top: 10px;
     font-size: 1.2em;
