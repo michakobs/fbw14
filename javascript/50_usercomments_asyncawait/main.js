@@ -1,7 +1,15 @@
 // Aufgabe:
 //
-// Erstelle eine grundlegende Navigationsfunktion. D.h.
-// Wenn der Nutzer af Show Users klickt, soll der String "Show Users" im container Div angezeigt werden. Wenn er auf "Add User" klickt, dann "Add User", usw.
+// 1) Konvertiere alle Funktionen dieses Codes in Arrow-Functions.
+//
+// 2) Baue alle XMLHttpRequest-Aufrufe in fetch-Aufrufe um.
+//    Verwende dabei die neue AsyncAwait-Syntax.
+// Aufgabe:
+//
+// 1) Konvertiere alle Funktionen dieses Codes in Arrow-Functions.
+//
+// 2) Baue alle XMLHttpRequest-Aufrufe in fetch-Aufrufe um.
+//    Verwende dabei die neue AsyncAwait-Syntax.
 
 const btnShowUsersObj = document.getElementById('btnShowUsers');
 const btnAddUserObj = document.getElementById('btnAddUser');
@@ -20,7 +28,7 @@ const addcommentObj = document.getElementById('addcomment');
 // die eine Tabelle erzeugt mit dem Tabellenkopf aus field1, field2, field,3, field4. 
 // Der fünfte Parameter data soll gleichd dem responseText des XMLHttpRequest-Objects sein.
 
-function createTable(field1, field2, field3, field4, data) {
+const createTable = (field1, field2, field3, field4, data) => {
     // Aufgabe:
     //
     // Basierend auf den Daten, baue eine Tabelle.
@@ -62,7 +70,7 @@ function createTable(field1, field2, field3, field4, data) {
         const td3Obj = document.createElement('td');
         const td4Obj = document.createElement('td');
 
-        td1Obj.innerText = e[field1];
+        td1Obj.innerText = e[field1]; // key interpolation -> obj['key']
         td2Obj.innerText = e[field2];
         td3Obj.innerText = e[field3];
         td4Obj.innerText = e[field4];
@@ -78,60 +86,72 @@ function createTable(field1, field2, field3, field4, data) {
     containerObj.appendChild(tableObj);
 }
 
-btnShowUsersObj.onclick = function () {
+btnShowUsersObj.onclick = async () => {
 
     adduserObj.style.display = 'none';
     addcommentObj.style.display = 'none';
 
-    let url = 'http://cileria.com:3050/users';
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
-    xhr.onload = function () {
-        if (xhr.status === 200) {
-            createTable('_id', 'name', 'username', 'email', xhr.responseText);
-        } else {
+    // X
+    // let url = 'http://cileria.com:3050/users';
+    // const xhr = new XMLHttpRequest();
+    // xhr.open('GET', url);
+    // xhr.onload = function () {
+    //     if (xhr.status === 200) {
+    //         createTable('_id', 'name', 'username', 'email', xhr.responseText);
+    //     } else {
 
-        }
-    }
-    xhr.send();
+    //     }
+    // }
+    // xhr.send();
+
+    const response = await fetch('http://cileria.com:3050/users');
+    const responseJson = await response.json();
+    const responseStr = JSON.stringify(responseJson);
+
+    createTable('_id', 'name', 'username', 'email', responseStr);
+
+    console.log(responseStr);
 }
 
+btnShowCommentsObj.onclick = async () => {
 
-btnShowCommentsObj.onclick = function () {
-    
-    adduserObj.style.display = 'none';   
+    adduserObj.style.display = 'none';
     addcommentObj.style.display = 'none';
 
-    let url = 'http://cileria.com:3050/comments';
-    
     // Aufgabe: Baue eine Tabelle auf Basis
     // der comments-Daten
-    
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
-    xhr.onload = function () {
-        if (xhr.status === 200) {
-            createTable('_id', 'name', 'email', 'body', xhr.responseText);
-        } else {
-            
-        }
-    }
-    xhr.send();
+
+    // X
+    // const xhr = new XMLHttpRequest();
+    // xhr.open('GET', url);
+    // xhr.onload = function () {
+    //     if (xhr.status === 200) {
+    //         createTable('_id', 'name', 'email', 'body', xhr.responseText);
+    //     } else {
+    //     }
+    // }
+    // xhr.send();
+
+    let url = 'http://cileria.com:3050/comments';
+    const response = await fetch(url);
+    const responseJson = await response.json();
+    const responseStr = JSON.stringify(responseJson);
+    createTable('_id', 'name', 'email', 'body', responseStr);
 }
 
-btnAddUserObj.onclick = function () {
+btnAddUserObj.onclick = () => {
     containerObj.innerText = '';
     adduserObj.style.display = 'flex';
     addcommentObj.style.display = 'none';
 }
 
-btnAddCommentObj.onclick = function () {
+btnAddCommentObj.onclick = () => {
     containerObj.innerText = '';
     adduserObj.style.display = 'none';
     addcommentObj.style.display = 'flex';
 }
 
-btnNewUserObj.onclick = function() {
+btnNewUserObj.onclick = async () => {
 
     const nameObj = document.getElementById('name');
     const newName = nameObj.value;
@@ -142,33 +162,36 @@ btnNewUserObj.onclick = function() {
     const emailObj = document.getElementById('email');
     const newEmail = emailObj.value;
 
-    if(newName.length === 0) {
+    if (newName.length === 0) {
         alert('Name darf nicht leer sein!');
         return;
     }
 
-    if(newUsername.length === 0) {
+    if (newUsername.length === 0) {
         alert('Username darf nicht leer sein!');
         return;
     }
 
-    if(newEmail.length === 0) {
+    if (newEmail.length === 0) {
         alert('Email darf nicht leer sein!');
         return;
-    }    
-
-    let url = 'http://cileria.com:3050/users';
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', url);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.onload = function () {
-        if (xhr.status === 200) {
-            alert('User angelegt.')
-        } 
-        else {
-            alert('Unerwarteter Fehler! Bitte den Systemadministrator anrufen! 030/3843823');
-        }
     }
+
+    // X
+    // let url = 'http://cileria.com:3050/users';
+    // const xhr = new XMLHttpRequest();
+    // xhr.open('POST', url);
+    // xhr.setRequestHeader('Content-Type', 'application/json');
+    // xhr.onload = function () {
+    //     if (xhr.status === 200) {
+    //         alert('User angelegt.')
+    //     }
+    //     else {
+    //         alert('Unerwarteter Fehler! Bitte den Systemadministrator anrufen! 030/3843823');
+    //     }
+    // }
+
+    // xhr.send(JSON.stringify(body));
 
     let body = {
         name: newName,
@@ -176,10 +199,27 @@ btnNewUserObj.onclick = function() {
         email: newEmail
     };
 
-    xhr.send( JSON.stringify(body) );
+    try {
+        const response = await fetch('http://cileria.com:3050/users',
+            {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST',
+                body: JSON.stringify(body)
+            });
+        
+        if(response.ok) {
+            alert('User ist angelegt.');
+        }
+    }
+    catch (e) {
+        console.log('Error: ' + e); 
+    }
 }
 
-btnNewComment.onclick = function () {
+btnNewComment.onclick = async () => {
 
     const nameObj = document.getElementById('commentname');
     const newName = nameObj.value;
@@ -190,28 +230,29 @@ btnNewComment.onclick = function () {
     const commentObj = document.getElementById('commenttext');
     const newComment = commentObj.value;
 
-    if(newName.length === 0) {
+    if (newName.length === 0) {
         alert('Name darf nicht leer sein!');
         return;
     }
 
-    if(newEmail.length === 0) {
+    if (newEmail.length === 0) {
         alert('Email darf nicht leer sein!');
         return;
-    }    
-
-    let url = 'http://cileria.com:3050/comments';
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', url);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.onload = function () {
-        if (xhr.status === 200) {
-            alert('Comment wurde erstellt.')
-        } 
-        else {
-            alert('Unerwarteter Fehler! Bitte den Systemadministrator anrufen! 030/3843823');
-        }
     }
+
+    // X
+    // let url = 'http://cileria.com:3050/comments';
+    // const xhr = new XMLHttpRequest();
+    // xhr.open('POST', url);
+    // xhr.setRequestHeader('Content-Type', 'application/json');
+    // xhr.onload = function () {
+    //     if (xhr.status === 200) {
+    //         alert('Comment wurde erstellt.')
+    //     }
+    //     else {
+    //         alert('Unerwarteter Fehler! Bitte den Systemadministrator anrufen! 030/3843823');
+    //     }
+    // }
 
     let body = {
         name: newName,
@@ -219,5 +260,24 @@ btnNewComment.onclick = function () {
         body: newComment
     };
 
-    xhr.send( JSON.stringify(body) );    
+    // xhr.send(JSON.stringify(body));
+
+    try {
+        const response = await fetch('http://cileria.com:3050/comments',
+            {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json' // im key darf kein operator drin sein, deshalb muss der key als string definiert werden
+                },
+                method: 'POST',
+                body: JSON.stringify(body)
+            });
+        
+        if(response.ok) {
+            alert('Comment ist erstellt.');
+        }
+    }
+    catch (e) {
+        console.log('Error: ' + e); 
+    }    
 }
