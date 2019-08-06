@@ -5,6 +5,7 @@
 
 const btnShowUsersObj = document.getElementById('btnShowUsers');
 const btnAddUserObj = document.getElementById('btnAddUser');
+const btnNewCommentObj = document.getElementById('btnNewComment');
 const btnShowCommentsObj = document.getElementById('btnShowComments');
 const btnAddCommentObj = document.getElementById('btnAddComment');
 const containerObj = document.getElementById('container');
@@ -176,4 +177,47 @@ btnNewUserObj.onclick = function() {
     };
 
     xhr.send( JSON.stringify(body) );
+}
+
+btnNewComment.onclick = function () {
+
+    const nameObj = document.getElementById('commentname');
+    const newName = nameObj.value;
+
+    const emailObj = document.getElementById('commentemail');
+    const newEmail = emailObj.value;
+
+    const commentObj = document.getElementById('commenttext');
+    const newComment = commentObj.value;
+
+    if(newName.length === 0) {
+        alert('Name darf nicht leer sein!');
+        return;
+    }
+
+    if(newEmail.length === 0) {
+        alert('Email darf nicht leer sein!');
+        return;
+    }    
+
+    let url = 'http://cileria.com:3050/comments';
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', url);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            alert('Comment wurde erstellt.')
+        } 
+        else {
+            alert('Unerwarteter Fehler! Bitte den Systemadministrator anrufen! 030/3843823');
+        }
+    }
+
+    let body = {
+        name: newName,
+        email: newEmail,
+        body: newComment
+    };
+
+    xhr.send( JSON.stringify(body) );    
 }
