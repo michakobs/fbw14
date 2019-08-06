@@ -261,7 +261,6 @@ btnNewComment.onclick = async () => {
     };
 
     // xhr.send(JSON.stringify(body));
-
     try {
         const response = await fetch('http://cileria.com:3050/comments',
             {
