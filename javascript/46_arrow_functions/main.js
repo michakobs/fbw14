@@ -43,6 +43,7 @@ const howManyPercentHaveFailed = (inputArray, punktezahl) => {
     let failedQuote = studentsWhoFailed / inputArray.length * 100;
     console.log(`Es sind ${failedQuote} % durchgefallen, ${100-failedQuote} % haben bestanden`);
 }
+
 howManyPercentHaveFailed(alleResultate, 45);
 
 // Ein Parameters, imperativ
