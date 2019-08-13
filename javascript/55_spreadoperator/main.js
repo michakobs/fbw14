@@ -65,6 +65,23 @@ console.log(additional);
 // Restriktion: verwende dafür NUR den Spread-Operator und kein Push. Schleifen sind erlaubt. 
 
 
+const increasingNumbers = (n) => {
+    let newarray = [];
+    for (let i=0; i<n; i++) {
+        newarray=[...newarray,i]
+    }
+    return newarray;
+}
+
+console.log(increasingNumbers(5));
+
+
+
+
+
+
+
+
 
 // Aufgabe Schwer:
 //
