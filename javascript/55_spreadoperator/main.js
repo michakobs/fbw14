@@ -77,29 +77,28 @@ const increasingNumbers = (n) => {
 
 console.log(increasingNumbers(5));
 
+// Spread Operator mit Objekten
+let obj1 = {
+    x: 1,
+    y: 5
+};
+console.log( obj1 );
 
+// obj1 wird direkt verändert
+obj1.x = 10;
+console.log( obj1 );
 
+let obj2 = obj1;
 
+// obj1 indirekt über die referenz von obj2 verändert
+obj2.x = 12;
+console.log(obj1);
 
+// obj3 ist ein klon von obj1
+let obj3 = { ...obj1 };
+obj3.x = 50000;
+console.log(obj1);
 
-
-
-
-// Aufgabe Schwer:
-//
-// Erstelle eine Funktion cube mit einem parameter
-// length. Cube returned ein 3-dimensionales Array
-// der Länge n und soll von der Struktur her an 
-// einen Würfel erinnern. Jedes Element des Cubes
-// soll abwechselnd eine 0 und eine 1 sein.
-// z.B.
-//
-// cube(3):
-//
-// [ 
-//   [ [0, 1, 0], [1, 0, 1], [0, 1, 0] ],
-//   [ [1, 0, 1], [0, 1, 0], [1, 0, 1] ],
-//   [ [0, 1, 0], [1, 0, 1], [0, 1, 0] ]
-// ];
-//
-// Restriktion: verwende dafür den Spread-Operator.
+// obj3 ist ein klon von obj1, mit überschreibung des key-value paares y: 5
+let obj4 = { ...obj1, y: 15 };
+console.log( obj4 );
