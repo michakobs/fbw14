@@ -4,3 +4,47 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body {
+    height: 100%;
+    background: #797979b2;
+}
+
+a {
+    color: cornflowerblue;
+}
+
+.container {
+    margin: 0 auto;
+    min-width: 600px;
+    max-width: 1400px;
+    width: 90%;
+    height: 100%;
+}
+
+/* header-bereich */
+
+.logo {
+    font-size: 2em;
+    padding: 5px;
+    background: rgb(240, 240, 240);
+    color: #1a1a1a;
+}
+
+.navigation {
+    padding: 10px;
+    background: rgb(240, 240, 240);
+    display: flex;
+    justify-content: space-between;
+}
+
+.thumbnail-container {
+
+}
+
+.thumbnail {
+    width: 250px;
+    height: 180px;
+    background: url('../images/beethoven.jpg') center center;
+    margin: 5px 10px;
+}
+
