@@ -99,6 +99,6 @@ let obj3 = { ...obj1 };
 obj3.x = 50000;
 console.log(obj1);
 
-// obj3 ist ein klon von obj1, mit überschreibung des key-value paares y: 5
+// obj4 ist ein klon von obj1, mit überschreibung des key-value paares y: 5
 let obj4 = { ...obj1, y: 15 };
 console.log( obj4 );

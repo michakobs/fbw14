@@ -54,11 +54,23 @@ const users = [
 
 const uppercaseUsers = users.map((n) => {
     console.log(n);
-    let m = n;
-    m.name = n.name.toUpperCase();
-    m.country = n.country.toUpperCase();
-    return m;
+    return {
+        ...n,
+        name: n.name.toUpperCase(),
+        country: n.country.toUpperCase()
+    }
 });
 
 // 2. Erstelle ein Array germans welches aus den deutschen Nutzern besteht
 //    die mehr als 10€ haben.
+
+const germans = users.filter((u) => (u.money > 10 && u.country === 'germany'));
+
+// const germans = users.filter((u) => {
+//     if(u.money > 10 && u.country === 'germany') {
+//         return true;
+//     }
+
+//     return false;
+// });
+
