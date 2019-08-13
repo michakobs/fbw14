@@ -68,7 +68,9 @@ console.log(additional);
 const increasingNumbers = (n) => {
     let newarray = [];
     for (let i=0; i<n; i++) {
-        newarray=[...newarray,i]
+        newarray=[...newarray, i] 
+        // newarray=[...newarray, ...[i]] // geht auch
+
     }
     return newarray;
 }
