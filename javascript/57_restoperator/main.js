@@ -49,11 +49,15 @@ console.log(multiSum1(2, 6));
 console.log(multiSum1(2, 6, 3));
 console.log(multiSum1(2, 6, 3, 1));
 
-const multiSum2 = (a, b, ...args) => {
-    if(!a || !b) return null;
-    if(!args) return a*b;
+const multiSum2 = (a, b, ...args) => { 
+    if(typeof a === 'undefined' || typeof b === 'undefined') return null;
 
     let sum = 0;
     for(let arg of args) sum += arg;
     return a*b+sum;
 }
+
+console.log(multiSum2(0));
+console.log(multiSum2(0, 0));
+console.log(multiSum2(undefined, 0));
+
