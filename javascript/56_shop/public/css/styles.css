@@ -49,8 +49,8 @@ a {
 }
 
 .thumbnail {
-    display: none;
-    /* display: flex; */
+    /* display: none; */
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 250px;
@@ -79,6 +79,7 @@ a {
 
 .product-details {
     display: none;
+    /* display: block; */
     background: rgb(230, 230, 230);
 }
 
@@ -116,6 +117,7 @@ button {
 .cart {
     background: rgb(255, 255, 255);
     display: none;
+    /* display: block; */
 }
 
 .cart-item {
@@ -147,7 +149,8 @@ button {
 }
 
 .thankyou {
-    display: flex;
+    display: none;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     background: #fff;
