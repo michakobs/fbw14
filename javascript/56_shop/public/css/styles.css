@@ -98,3 +98,12 @@ a {
 .product-buy {
     margin-top: 20px;
 }
+
+.product-buy button {
+    margin-top: 15px;
+}
+
+button {
+    font-size: 1.2em;
+    padding: 3px;
+}
