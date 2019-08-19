@@ -38,13 +38,37 @@ a {
 }
 
 .thumbnail-container {
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgb(230, 230, 230);
 }
 
 .thumbnail {
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: space-between;
     width: 250px;
     height: 180px;
     background: url('../images/beethoven.jpg') center center;
     margin: 5px 10px;
 }
 
+.thumbnail-name, .thumbnail-price {
+    width: 100%;
+    color: #fff;
+    padding: 3px;
+}
+
+.thumbnail-name {
+    align-self: start;
+    background: rgba(0, 0, 0, 0.5);
+    
+}
+
+.thumbnail-price {
+    align-self: end;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: right;
+}
