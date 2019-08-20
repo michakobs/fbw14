@@ -1,15 +1,9 @@
 const thumbnailObj = document.getElementsByClassName('thumbnail');
-
 const thumbnailContainerObj = document.getElementById('thumbnail-container');
-
 const productDetailsObj = document.getElementById('product-details');
-
 const cartObj = document.getElementById('cart');
-
 const thankyouObj = document.getElementById('thankyou');
-
 const cartBuyButtonObj = document.getElementById('cart-buy-button');
-
 const logoObj = document.getElementById('logo');
 
 // in den Warenkorb legen - Button
@@ -17,7 +11,7 @@ const putItemCartObj = document.getElementById('put-item-cart');
 
 const showStartpage = () => {
     productDetailsObj.style.display = 'none';
-    thumbnailContainerObj.style.display = 'flex';        
+    thumbnailContainerObj.style.display = 'flex';
     cartObj.style.display = 'none';
     thankyouObj.style.display = 'none';    
 }
@@ -26,19 +20,19 @@ const showProductDetails = () => {
     productDetailsObj.style.display = 'block';
     thumbnailContainerObj.style.display = 'none';        
     cartObj.style.display = 'none';
-    thankyouObj.style.display = 'none';    
+    thankyouObj.style.display = 'none'   
 }
 
 const showCart = () => {
     productDetailsObj.style.display = 'none';
-    thumbnailContainerObj.style.display = 'none';        
+    thumbnailContainerObj.style.display = 'none';
     cartObj.style.display = 'block';
-    thankyouObj.style.display = 'none';    
+    thankyouObj.style.display = 'none'; 
 }
 
 const showThankYou = () => {
     productDetailsObj.style.display = 'none';
-    thumbnailContainerObj.style.display = 'none';        
+    thumbnailContainerObj.style.display = 'none';
     cartObj.style.display = 'none';
     /*
     analog zu:
@@ -64,7 +58,6 @@ for(let i=0; i<thumbnailObj.length; i++) {
     }
 }
 
-
 // Aufgabe:
 //
 // Implementiere
@@ -78,4 +71,3 @@ logoObj.onclick = () => {
 // siehe HTML
 
 // 3) Klick auf Cart -> Warenkorb
-
