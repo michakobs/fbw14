@@ -62,12 +62,10 @@ for(let i=0; i<thumbnailObj.length; i++) {
 //
 // Implementiere
 // 1) Klick aufs Logo -> Startseite
-
 logoObj.onclick = () => {
     showStartpage();
 }
 // 2) Klick auf All -> Startseite
-
 // siehe HTML
-
 // 3) Klick auf Cart -> Warenkorb
+
