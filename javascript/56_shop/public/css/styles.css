@@ -203,4 +203,21 @@ button {
         font-size: 1.8em;
     }
 
+    .product-container {
+        flex-direction: column;
+    }
+
+    .product-image {
+        text-align: center;
+    }
+
+    .product-description {
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    .cart-item {
+        width: 100%;
+        font-size: 1.3em;
+    }
 }
