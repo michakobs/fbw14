@@ -32,6 +32,7 @@ a {
     padding: 5px;
     background: rgb(240, 240, 240);
     color: #1a1a1a;
+    cursor: pointer;
 }
 
 .navigation {
@@ -68,7 +69,6 @@ a {
 .thumbnail-name {
     align-self: start;
     background: rgba(0, 0, 0, 0.5);
-    
 }
 
 .thumbnail-price {
@@ -145,7 +145,8 @@ button {
     font-size: 1.1em;
 }
 
-.cart-description > div span, .cart-description > div button {
+.cart-description > div span, 
+.cart-description > div button {
     margin-left: 10px;
 }
 

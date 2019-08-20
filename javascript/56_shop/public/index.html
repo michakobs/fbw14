@@ -12,16 +12,16 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo">Mini-Shop</div>
+            <div class="logo" id="logo">Mini-Shop</div>
             <div class="navigation">
                 <div class="navi-categories">
-                    <a href="#">All</a> |
+                    <a onClick="showStartpage()" href="#">All</a> |
                     <a href="#">Books</a> |
                     <a href="#">Movies</a> |
                     <a href="#">Music</a>
                 </div>
                 <div class="navi-right">
-                    <a href="#">Cart</a>
+                    <a onClick="showCart()" href="#">Cart</a>
                 </div>
             </div>
         </div>
@@ -122,7 +122,7 @@
                 </div>
 
                 <div class="cart-buy">
-                    Total Amount: <span class="cart-totalamount">80,00</span> € <button class="cart-buy-button">Buy Now</button>
+                    Total Amount: <span class="cart-totalamount">80,00</span> € <button id="cart-buy-button"  class="cart-buy-button">Buy Now</button>
                 </div>
 
             </div>
