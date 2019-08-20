@@ -117,6 +117,7 @@ button {
 .cart {
     background: rgb(255, 255, 255);
     display: none;
+    padding: 6px;
     /* display: block; */
 }
 
@@ -155,4 +156,15 @@ button {
     align-items: center;
     background: #fff;
     height: 200px;
+}
+
+.cart-buy {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cart-buy-button {
+    display: block;
+    margin: 5px auto;
 }

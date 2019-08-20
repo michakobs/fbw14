@@ -25,6 +25,20 @@ const showCart = () => {
     thankyouObj.style.display = 'none';    
 }
 
+const showThankYou = () => {
+    productDetailsObj.style.display = 'none';
+    thumbnailContainerObj.style.display = 'none';        
+    cartObj.style.display = 'none';
+    /*
+    analog zu:
+
+    .thankyou {
+        display: flex
+    }
+    */
+    thankyouObj.style.display = 'flex';    
+}
+
 putItemCartObj.onclick = () => {
     showCart();
 }
@@ -34,3 +48,4 @@ for(let i=0; i<thumbnailObj.length; i++) {
         showProductDetails();
     }
 }
+
