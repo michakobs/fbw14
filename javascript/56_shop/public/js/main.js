@@ -9,9 +9,19 @@ const logoObj = document.getElementById('logo');
 // in den Warenkorb legen - Button
 const putItemCartObj = document.getElementById('put-item-cart');
 
-const loadProducts = async () => {
+const loadProducts = async (category) => {
+
+    // standardmäßig keine category
+    let url = 'http://localhost:3000/product';
+    
+    // falls die category existiert, dann hänge
+    // sie dran
+    if(typeof category !== 'undefined') {
+        url += '?category=' + category;
+    }
+    
     // 1. fetch-aufruf abfeuern
-    const response = await fetch('http://localhost:3000/product');
+    const response = await fetch(url);
     // 2. das objekt als json interpretieren -> wir bekommen ein objekt
     const responseJson = await response.json();
     
@@ -37,6 +47,7 @@ const loadProducts = async () => {
 loadProducts();
 
 const showStartpage = () => {
+    loadProducts();
     productDetailsObj.style.display = 'none';
     thumbnailContainerObj.style.display = 'flex';
     cartObj.style.display = 'none';
