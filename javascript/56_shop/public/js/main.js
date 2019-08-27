@@ -1,3 +1,6 @@
+// globale variablen/konstanten
+let cart = [];
+let products = [];
 const thumbnailObj = document.getElementsByClassName('thumbnail');
 const thumbnailContainerObj = document.getElementById('thumbnail-container');
 const productDetailsObj = document.getElementById('product-details');
@@ -5,7 +8,6 @@ const cartObj = document.getElementById('cart');
 const thankyouObj = document.getElementById('thankyou');
 const cartBuyButtonObj = document.getElementById('cart-buy-button');
 const logoObj = document.getElementById('logo');
-
 // in den Warenkorb legen - Button
 const putItemCartObj = document.getElementById('put-item-cart');
 
@@ -31,15 +33,18 @@ const loadProducts = async (category) => {
     // </div>    
     
     thumbnailContainerObj.innerHTML = '';
-
     for(product of responseJson.products) {
+        products.push(product);
         const newDiv = document.createElement('div');
         newDiv.className = 'thumbnail';
         newDiv.style.background = `url(public/${product.imgurl}) center center`;
         newDiv.innerHTML = `
            <div class="thumbnail-name">${product.name}</div>
-           <div class="thumbnail-price">${product.price} €</div>            
+           <div class="thumbnail-price">${product.price} €</div>
         `;
+        
+        newDiv.onclick = showProductDetails.bind(this, product.id);
+
         thumbnailContainerObj.appendChild(newDiv);
     }
 }
@@ -54,11 +59,19 @@ const showStartpage = () => {
     thankyouObj.style.display = 'none';
 }
 
-const showProductDetails = () => {
+const showProductDetails = (id) => {
+    
+    // verstecke alles, außer die product-details seite
     productDetailsObj.style.display = 'block';
     thumbnailContainerObj.style.display = 'none';
     cartObj.style.display = 'none';
     thankyouObj.style.display = 'none'
+
+    const currentProduct = products.filter((product) => product.id === id)[0];
+
+    const productDetailsTitleObj = document.getElementById('product-details-title');
+
+    productDetailsTitleObj.innerText = currentProduct.name;
 }
 
 const showCart = () => {
