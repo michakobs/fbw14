@@ -9,6 +9,16 @@ const logoObj = document.getElementById('logo');
 // in den Warenkorb legen - Button
 const putItemCartObj = document.getElementById('put-item-cart');
 
+const loadProducts = () => {
+    // 1. fetch-aufruf abfeuern
+    const response = await fetch('http://localhost:3000/product');
+    // 2. das objekt als json interpretieren -> wir bekommen ein objekt
+    const responseJson = await response.json();
+    // 3. als string darstellen
+    const responseStr = JSON.stringify(responseJson);
+    console.log(responseStr);        
+}
+
 const showStartpage = () => {
     productDetailsObj.style.display = 'none';
     thumbnailContainerObj.style.display = 'flex';
