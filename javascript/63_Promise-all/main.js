@@ -24,8 +24,8 @@ Promise.all(imagePromises).then(function (urls) {
     for (var i = 0; i < urls.length; i++) {
         var img = document.createElement('img');
         img.setAttribute('src', urls[i]);
-        container.appendChild(img);
+        container.append(img);
     }
 }).catch(function (urls) {
     console.warn("Error fetching some images: " + urls)
-})
+});
