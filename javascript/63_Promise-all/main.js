@@ -1,26 +1,29 @@
+
+function getImage(imageName) {
+    let url = `http://openweathermap.org/img/w/${imageName}.png`;
+    console.log(url);
+    return new Promise(function (resolve, reject) {
+        var img = new Image();
+        img.onload = function () {
+            resolve(url);
+        }
+        img.onerror = function () {
+            reject(url);
+        }
+        img.src = url;
+    })
+}
+
 const imageNames = ['01d', '04n', '09d', '50n'];
-const container = document.getElementById('container');
+const imagePromises = imageNames.map(getImage); // call getImage on each array element and return array of promises
 
-let makeFetch = collection => {
-    let imagePromises = [];
-    for (imageName of collection) {
-        let promiseImage = new Promise((resolve, reject) => {
-            resolve(fetch(`http://openweathermap.org/img/w/${imageName}.png`, {
-                mode: 'no-cors'} // NICHT SICHERE LEITUNG! 
-            ));
-        });
-        imagePromises.push(promiseImage);
+Promise.all(imagePromises).then(function (urls) {
+    console.table(imagePromises);
+    for (var i = 0; i < urls.length; i++) {
+        var img = document.createElement('img');
+        img.setAttribute('src', urls[i]);
+        container.appendChild(img);
     }
-    return Promise.all(imagePromises);
-}
-
-let fetchImages = async (collection) => {
-    let allImages = await makeFetch(collection);
-    console.table(allImages);
-    for (image of allImages) {
-        let newImage = document.createElement('IMG');
-        newImage.src = image.url;
-        container.appendChild(newImage);
-    }
-}
-fetchImages(imageNames);
+}).catch(function (urls) {
+    console.warn("Error fetching some images: " + urls)
+})
