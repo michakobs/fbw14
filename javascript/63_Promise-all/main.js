@@ -2,7 +2,7 @@
 function getImage(imageName) {
     let url = `http://openweathermap.org/img/w/${imageName}.png`;
     console.log(url);
-    return new Promise(function (resolve, reject) {
+    let myPromise = new Promise(function (resolve, reject) {
         var img = new Image();
         img.onload = function () {
             resolve(url);
@@ -11,7 +11,9 @@ function getImage(imageName) {
             reject(url);
         }
         img.src = url;
-    })
+    });
+    console.log(myPromise);
+    return myPromise;
 }
 
 const imageNames = ['01d', '04n', '09d', '50n'];
