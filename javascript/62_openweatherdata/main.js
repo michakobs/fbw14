@@ -5,8 +5,16 @@ btnObj.onclick = () => {
     //console.log('wetter');
     event.preventDefault();
     let inputValueObj = document.getElementById('input').value;
+    let locArray = inputValueObj.split(',');
+    let locArrayTrimmed = [];
+    for (element of locArray) {
+        console.log(element);
+        locArrayTrimmed.push(element.trim());
+    }
+    for (element of locArrayTrimmed) {
+        loadCityData(element);
+    }
     //console.log(inputValueObj);
-    loadCityData(inputValueObj);
 }
 
 const colorTemperatures = [{
