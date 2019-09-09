@@ -23,6 +23,7 @@ btnObj.onclick = async () => {
         // Jeder einzelne Response muss ausgepackt werden
         // und wieder in ein Array gespeichert werden
         for (response of allResponses) {
+            debugger
             let convertedResponse = await response.json();
             weatherData.push(convertedResponse);
         }
