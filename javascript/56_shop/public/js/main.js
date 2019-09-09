@@ -44,9 +44,13 @@ const loadProducts = async (category) => {
         `;
         
         newDiv.onclick = showProductDetails.bind(this, product.id);
-
         thumbnailContainerObj.appendChild(newDiv);
     }
+
+    productDetailsObj.style.display = 'none';
+    thumbnailContainerObj.style.display = 'flex';
+    cartObj.style.display = 'none';
+    thankyouObj.style.display = 'none';    
 }
 
 loadProducts();
@@ -67,7 +71,6 @@ const showProductDetails = (id) => {
     thankyouObj.style.display = 'none'
 
     const currentProduct = products.filter((product) => product.id === id)[0];
-
     const productDetailsTitleObj = document.getElementById('product-details-title');
 
     // wir verändern die daten für die produktdetail-ansicht
@@ -283,14 +286,6 @@ for (let i = 0; i < thumbnailObj.length; i++) {
     }
 }
 
-// Aufgabe:
-//
-// Implementiere
-// 1) Klick aufs Logo -> Startseite
 logoObj.onclick = () => {
     showStartpage();
 }
-// 2) Klick auf All -> Startseite
-// siehe HTML
-// 3) Klick auf Cart -> Warenkorb
-
