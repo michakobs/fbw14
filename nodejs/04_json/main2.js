@@ -32,10 +32,39 @@ for(line of lines) {
         email: email
     });
 }
-console.log( users );
+console.log(users);
 // 2. Schreibe eine funktion
 //    csv2json welche alle
 //    csv-daten (mit beliebiger anzahl 
 //    von spalten) in JSON konvertiert
 //    PS: Key Interpolation
 
+// str = csv string
+const csv2json = (str) => {
+    str = str.replace(new RegExp('"', 'g'), '');
+    str = str.replace(new RegExp(' ', 'g'), '');
+    const csvLines = str.split('\n');
+    // id, color, year, space, os 
+    const keys = csvLines[0].split(',');
+    let obj = {};
+    for(let key of keys) {
+        obj[key] = '';
+    }
+    console.log( obj );
+    csvLines.shift();
+    const cellphones = [];
+    for(let line of csvLines) {
+        let i=0;
+        const cellphone = {};
+        const column = line.split(',');
+        for(key in obj) {
+            cellphone[key] = column[i];
+            i++;
+        }
+        cellphones.push(cellphone);
+    }
+    console.log(cellphones);
+}
+
+const fileData = fs.readFileSync('./cellphones.csv', 'utf-8');
+csv2json(fileData);
