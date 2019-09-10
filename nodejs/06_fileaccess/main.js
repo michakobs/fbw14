@@ -18,20 +18,51 @@ fs.writeFileSync('./new_blabla.txt', newTxt);
 // 4.) Erstelle einen Algorithmus, der eine Datei von 512 MB erzeugt
 //     und erzeuge damit eine Datei dummy.txt 
 
-let fourBytes = 'aaaa';
-fs.writeFileSync('./fourBytes.txt', fourBytes);
+const createBigFile = (mb) => {
+    let fourBytes = 'aaaa';
+    fs.writeFileSync('./fourBytes.txt', fourBytes);
 
-let oneKilobyte = '';
+    let oneKilobyte = '';
+    for(let i=0; i<1000/4; i++) {
+        oneKilobyte += fourBytes;
+    }
 
-for(let i=0; i<1000/4; i++) {
-    oneKilobyte += fourBytes;
+    fs.writeFileSync('./oneKilobyte.txt', oneKilobyte);
+
+    let fivehundredtwelveMB = '';
+    for(let i=0; i < mb*1000; i++) {
+        fivehundredtwelveMB += oneKilobyte;
+    }
+    fs.writeFileSync('./fivehundredtwelveMB.txt', fivehundredtwelveMB);
 }
 
-fs.writeFileSync('./oneKilobyte.txt', oneKilobyte);
+// strings an anhängen
+const newStr = '\n\nPS: Bitte die Rechnung überweisen.';
+fs.appendFileSync('./blabla.txt', newStr);
 
-let fivehundredtwelveMB = '';
-for(let i=0; i<512*1000; i++) {
-    fivehundredtwelveMB += oneKilobyte;
+// dateien löschen
+try {
+    fs.unlinkSync('./DELETEME');
+}
+catch(e) {
+    console.log('Datei nicht gefunden.');
 }
 
-fs.writeFileSync('./fivehundredtwelveMB.txt', fivehundredtwelveMB);
+// Aufgabe:
+// 
+// Gegeben sei folgendes JavaScript-Array:
+const users = [
+    { id: 1, name: 'John', email: 'john@gmx.net' },
+    { id: 2, name: 'Bob', email: 'bob@gmail.com' },
+    { id: 3, name: 'Sarah', email: 'sarah@gmx.net' }
+];
+
+// 1. Finde einen Weg, dieses Array in einer Datei
+//    zu speichern. Nenne die Datei users.json
+fs.writeFileSync('./users.json', JSON.stringify(users));
+
+// 2. Speichere dieses Array auch als CSV ab -> users.csv
+fs.writeFileSync('./users.csv', `id,name,email`);
+for(elem of users) {
+    fs.appendFileSync('./users.csv', `\n${elem.id},${elem.name},${elem.email}`);
+}
