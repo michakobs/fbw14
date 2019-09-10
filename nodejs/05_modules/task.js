@@ -33,3 +33,44 @@ const obj = {
 
 const intro = require('./introduction.js');
 intro(obj);
+
+// Aufgabe 3:
+//
+// a) Erstelle ein Modul "Person.js" mit
+// folgender Klasse
+
+// class Person {
+//     constructor(
+//                 firstname, 
+//                 lastname, 
+//                 email, 
+//                 birthYear) 
+//     {
+//         this.firstname = firstname;
+//         this.lastname = lastname;
+//         this.email = email;
+//         this.birthYear = birthYear;
+//     }
+// }
+
+const Person = require('./Person');
+
+const person1 = new Person(
+    'Anton','Baumgartner', 'anton@gmx.net', 1965
+);
+
+const person2 = new Person(
+    'Bernd','Zaungartner', 'bernd@gmx.net', 1990
+);
+
+const person3 = new Person(
+    'Klaus','Gartner', 'anton@gmx.net', 1988
+);
+
+// b) Importiere Person hier rein. 
+// c) Erstelle 3 verschiedene Personen mit erfundenen Daten.
+// d) Erweitere Person um eine Methode, die
+//    Alter berechnet aufgrund des aktuellen
+//    Jahres 2019 und returne dieses. Führe die Methode hier aus.
+
+console.log(person1.getAge());
